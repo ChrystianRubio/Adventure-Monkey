@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="SegmentShape2D" id=1]
+a = Vector2( 1029, 15 )
+b = Vector2( 4, 12 )
+
+[node name="KinematicBody2D" type="Area2D"]
+position = Vector2( 4, 374 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )

@@ -1,0 +1,40 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Images/Monkey/monkey_right02.png" type="Texture" id=1]
+[ext_resource path="res://Images/Monkey/monkey_right03.png" type="Texture" id=2]
+[ext_resource path="res://PlayerGood.gd" type="Script" id=3]
+[ext_resource path="res://Images/Monkey/monkey_right01.png" type="Texture" id=4]
+
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 12.5
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 4 ), ExtResource( 1 ), ExtResource( 2 ) ],
+"loop": true,
+"name": "left",
+"speed": 1.0
+}, {
+"frames": [ ExtResource( 4 ), ExtResource( 1 ), ExtResource( 2 ) ],
+"loop": true,
+"name": "right",
+"speed": 5.0
+} ]
+
+[node name="KinematicBody2D" type="KinematicBody2D"]
+position = Vector2( 280, 140 )
+scale = Vector2( 2, 2 )
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -1, 2 )
+shape = SubResource( 1 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( -1, 1 )
+frames = SubResource( 2 )
+animation = "left"
+speed_scale = 4.0

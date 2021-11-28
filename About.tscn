@@ -1,0 +1,86 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Images/botao/rm222batch5-kul-21.jpg" type="Texture" id=1]
+[ext_resource path="res://Images/Monkey/monkeyForest2.png" type="Texture" id=2]
+[ext_resource path="res://Images/botao/PNG/shiny/11.png" type="Texture" id=3]
+[ext_resource path="res://Images/botao/rimouski sb.otf" type="DynamicFontData" id=4]
+[ext_resource path="res://touchVoltarMenu.gd" type="Script" id=5]
+
+[sub_resource type="DynamicFont" id=1]
+size = 37
+font_data = ExtResource( 4 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 200, 90 )
+
+[node name="About" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="background" type="TextureRect" parent="."]
+margin_left = 11.0
+margin_top = 4.0
+margin_right = 5012.0
+margin_bottom = 3338.0
+rect_scale = Vector2( 0.21, 0.12 )
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MonkeyForest2" type="Sprite" parent="."]
+position = Vector2( 262, 254 )
+scale = Vector2( 0.8, 0.8 )
+texture = ExtResource( 2 )
+
+[node name="textAbout" type="Label" parent="."]
+modulate = Color( 0, 0, 0, 1 )
+self_modulate = Color( 0, 0, 0, 1 )
+margin_left = 528.0
+margin_top = 152.0
+margin_right = 788.0
+margin_bottom = 217.0
+text = "CREATED BY:	      CHRYSTIAN RUBIO
+GAME ENGINE:  GODOT
+SPRITES: 			            flaticon.com
+GITHUB:			            github.com/ChrystianRubio"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="botaoVoltar" type="Sprite" parent="."]
+position = Vector2( 644, 282 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 3 )
+
+[node name="textVoltar" type="Label" parent="."]
+margin_left = 600.0
+margin_top = 260.0
+margin_right = 720.0
+margin_bottom = 305.0
+custom_fonts/font = SubResource( 1 )
+text = "back"
+uppercase = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="touchVoltarMenu" type="TouchScreenButton" parent="."]
+position = Vector2( 644, 283 )
+scale = Vector2( 0.5, 0.5 )
+shape = SubResource( 2 )
+shape_centered = false
+script = ExtResource( 5 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 6, -96 )
+scale = Vector2( 0.1, 1 )
+offset = Vector2( 520, 300 )
+current = true
+drag_margin_h_enabled = true
+drag_margin_v_enabled = true
+
+[connection signal="pressed" from="touchVoltarMenu" to="touchVoltarMenu" method="_on_touchVoltarMenu_pressed"]

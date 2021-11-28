@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/monkey_cry.wav-31dcdc42bbb4e5cf54b82325dddb645f.sample"
+
+[deps]
+
+source_file="res://Songs/monkey_cry.wav"
+dest_files=[ "res://.import/monkey_cry.wav-31dcdc42bbb4e5cf54b82325dddb645f.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

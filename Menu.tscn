@@ -1,0 +1,140 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://Menu.gd" type="Script" id=1]
+[ext_resource path="res://Images/botao/PNG/shiny/8.png" type="Texture" id=2]
+[ext_resource path="res://Images/botao/rm222batch5-kul-21.jpg" type="Texture" id=3]
+[ext_resource path="res://Images/Monkey/monkeyForest2.png" type="Texture" id=4]
+[ext_resource path="res://Images/botao/HALO____.TTF" type="DynamicFontData" id=5]
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 200, 100 )
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 200, 100 )
+
+[sub_resource type="DynamicFont" id=10]
+size = 37
+font_data = ExtResource( 5 )
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 200, 100 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 37
+font_data = ExtResource( 5 )
+
+[sub_resource type="DynamicFont" id=9]
+size = 37
+font_data = ExtResource( 5 )
+
+[node name="Menu" type="Control"]
+anchor_right = 0.997
+anchor_bottom = 1.0
+margin_right = 0.0719604
+margin_bottom = 15.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 6, -96 )
+scale = Vector2( 0.1, 1 )
+offset = Vector2( 520, 300 )
+current = true
+drag_margin_h_enabled = true
+drag_margin_v_enabled = true
+
+[node name="Start" type="TouchScreenButton" parent="."]
+position = Vector2( 677, 60 )
+scale = Vector2( 0.5, 0.5 )
+shape = SubResource( 4 )
+shape_centered = false
+
+[node name="Quit" type="TouchScreenButton" parent="."]
+position = Vector2( 677, 348 )
+scale = Vector2( 0.5, 0.5 )
+shape = SubResource( 5 )
+shape_centered = false
+
+[node name="QuitLabel" type="Label" parent="."]
+margin_left = 625.0
+margin_top = 315.0
+margin_right = 736.0
+margin_bottom = 353.0
+custom_fonts/font = SubResource( 10 )
+text = "Quit"
+uppercase = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="background" type="TextureRect" parent="."]
+show_behind_parent = true
+margin_left = 11.0
+margin_top = 4.0
+margin_right = 5012.0
+margin_bottom = 3338.0
+rect_scale = Vector2( 0.21, 0.12 )
+texture = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MonkeyForest2" type="Sprite" parent="."]
+position = Vector2( 262, 254 )
+scale = Vector2( 0.8, 0.8 )
+texture = ExtResource( 4 )
+
+[node name="About" type="TouchScreenButton" parent="."]
+position = Vector2( 677, 199 )
+scale = Vector2( 0.5, 0.5 )
+shape = SubResource( 6 )
+shape_centered = false
+
+[node name="AboutLabel" type="Label" parent="."]
+margin_left = 590.0
+margin_top = 175.0
+margin_right = 758.0
+margin_bottom = 213.0
+custom_fonts/font = SubResource( 3 )
+text = "About"
+uppercase = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="StartLabel" type="Label" parent="."]
+margin_left = 590.0
+margin_top = 36.0
+margin_right = 760.0
+margin_bottom = 115.0
+custom_fonts/font = SubResource( 9 )
+text = "Start
+"
+uppercase = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RetanguloVerde" type="Sprite" parent="."]
+show_behind_parent = true
+position = Vector2( 676, 64 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 2 )
+
+[node name="RetanguloVerde2" type="Sprite" parent="."]
+show_behind_parent = true
+position = Vector2( 677, 204.5 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 2 )
+
+[node name="RetanguloVerde3" type="Sprite" parent="."]
+show_behind_parent = true
+position = Vector2( 677, 345 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 2 )
+
+[connection signal="pressed" from="Start" to="." method="_on_Start_pressed"]
+[connection signal="pressed" from="Quit" to="." method="_on_Quit_pressed"]
+[connection signal="pressed" from="About" to="." method="_on_About_pressed"]
