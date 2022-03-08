@@ -1,4 +1,4 @@
-# AdventureMonkey
+# AdventureMonkey :monkey:
 
 ## hi :v:
 
